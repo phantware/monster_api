@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/bin/node /usr/share/yarn/bin/yarn.js init
+  /usr/bin/node /usr/share/yarn/bin/yarn.js add pg
 
 PATH: 
   /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
@@ -14,20 +14,21 @@ Platform:
   linux x64
 
 Trace: 
-  Error: canceled
-      at Interface.<anonymous> (/usr/share/yarn/lib/cli.js:137008:13)
-      at Interface.emit (events.js:315:20)
-      at Interface._ttyWrite (readline.js:873:16)
-      at ReadStream.onkeypress (readline.js:213:10)
-      at ReadStream.emit (events.js:315:20)
-      at emitKeys (internal/readline/utils.js:335:14)
-      at emitKeys.next (<anonymous>)
-      at ReadStream.onData (readline.js:1140:36)
-      at ReadStream.emit (events.js:315:20)
-      at addChunk (_stream_readable.js:297:12)
+  Error: read ECONNRESET
+      at TLSWrap.onStreamRead (internal/stream_base_commons.js:205:27)
 
 npm manifest: 
-  No manifest
+  {
+    "name": "monster_api",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "phantware <phantmoney2011@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+      "start": "nodemon index.js",
+      "configure": "./bin/configuredb.sh"
+    }
+  }
 
 yarn manifest: 
   No manifest
