@@ -5,10 +5,12 @@
   "author": "phantware <phantmoney2011@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon ./bin/www",
+    "dev": "nodemon ./bin/www",
     "configure": "./bin/configuredb.sh"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "pg": "^8.0.3"
   }
 }
