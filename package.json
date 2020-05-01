@@ -1,0 +1,10 @@
+{
+  "name": "monster_api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "phantware <phantmoney2011@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon index.js"
+  }
+}
