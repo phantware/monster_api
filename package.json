@@ -5,6 +5,7 @@
   "author": "phantware <phantmoney2011@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "configure": "./bin/configuredb.sh"
   }
 }
