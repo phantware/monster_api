@@ -19,6 +19,7 @@ router.get("/:id", (req, res, next) => {
 
 router.post("/", (req, res, next) => {
   const { name, personality } = req.body;
+  
   pool.query(
     "INSERT INTO monsters (name, personality) VALUES ($1,$2)",
     [name, personality],
