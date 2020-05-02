@@ -29,4 +29,28 @@ router.post("/", (req, res, next) => {
   );
 });
 
+router.put("/:id", (req, res, next) => {
+  const { id } = req.params;
+
+  const { name, personality } = req.body;
+  const keys = ["name", "personality"];
+  const fields = [];
+
+  keys.forEach((key) => {
+    if (req.body[key]) fields.push(key);
+  });
+
+  fields.forEach((field, index) => {
+    pool.query(
+      `UPDATE monsters SET ${field}=($1) WHERE id=($2)  RETURNING *`,
+      [req.body[field], id],
+      (err, resp) => {
+        if (err) return next(err);
+
+        if (index === fields.length - 1) res.redirect("/monsters");
+      }
+    );
+  });
+});
+
 module.exports = router;
